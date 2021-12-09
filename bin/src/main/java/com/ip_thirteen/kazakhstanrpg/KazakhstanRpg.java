@@ -10,7 +10,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
+
 @Mod("kazakhstanrpg")
 public class KazakhstanRpg
 {
@@ -19,12 +19,12 @@ public class KazakhstanRpg
     public static final String MOD_ID = "kazakhstanrpg";
     public KazakhstanRpg() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        // Register the setup method for modloading
+
         eventBus.addListener(this::setup);
-        // Register the doClientStuff method for modloading
+
         eventBus.addListener(this::doClientStuff);
         ModItems.ITEMS.register(eventBus);
-        // Register ourselves for server and other game events we are interested in
+
         MinecraftForge.EVENT_BUS.register(this);
 
     }
