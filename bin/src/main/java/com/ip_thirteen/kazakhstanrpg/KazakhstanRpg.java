@@ -1,5 +1,6 @@
 package com.ip_thirteen.kazakhstanrpg;
 
+import com.ip_thirteen.kazakhstanrpg.init.BlockInit;
 import com.ip_thirteen.kazakhstanrpg.init.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,7 +24,9 @@ public class KazakhstanRpg
         eventBus.addListener(this::setup);
 
         eventBus.addListener(this::doClientStuff);
+        BlockInit.register(eventBus);
         ModItems.ITEMS.register(eventBus);
+
 
         MinecraftForge.EVENT_BUS.register(this);
 
