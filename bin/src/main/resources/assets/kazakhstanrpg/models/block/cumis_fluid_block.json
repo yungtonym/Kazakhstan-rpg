@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures" : {
+    "all" : "kazakhstanrpg:blocks/cumis_fluid_block"
+  }
+}

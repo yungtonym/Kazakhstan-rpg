@@ -1,5 +1,7 @@
 {
   "item.kazakhstanrpg.cumis": "Кумыс",
+  "item.kazakhstanrpg.cumis_bucket": "Ведро Кумыса",
+  "fluid.kazakhstanrpg.cumis_fluid" : "Кумыс",
   "block.kazakhstanrpg.cumis_block": "Блок Кумыса",
   "itemGroup.Mod_Materials_TAB": "Казахстан РПГ"
 }

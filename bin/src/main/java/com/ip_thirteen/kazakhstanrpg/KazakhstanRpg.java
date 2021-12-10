@@ -1,15 +1,25 @@
 package com.ip_thirteen.kazakhstanrpg;
 
 import com.ip_thirteen.kazakhstanrpg.init.BlockInit;
-import com.ip_thirteen.kazakhstanrpg.init.ModItems;
+import com.ip_thirteen.kazakhstanrpg.init.FluidInit;
+import com.ip_thirteen.kazakhstanrpg.init.ItemInit;
+import com.ip_thirteen.kazakhstanrpg.utils.ModItemGroups;
+import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 
 
 @Mod("kazakhstanrpg")
@@ -21,11 +31,13 @@ public class KazakhstanRpg
     public KazakhstanRpg() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ItemInit.ITEMS.register(eventBus);
+        BlockInit.BLOCKS.register(eventBus);
+        FluidInit.FLUIDS.register(eventBus);
+
         eventBus.addListener(this::setup);
 
         eventBus.addListener(this::doClientStuff);
-        BlockInit.register(eventBus);
-        ModItems.ITEMS.register(eventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -37,8 +49,25 @@ public class KazakhstanRpg
 
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
+    private void doClientStuff(final FMLClientSetupEvent event)
+    {
 
+
+    }
+    @SubscribeEvent
+    public static void RegisterItem(final RegistryEvent.Register<Item> even)
+    {
+        final IForgeRegistry<Item> registry = even.getRegistry();
+
+        BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)
+                .filter(block -> !(block instanceof FlowingFluidBlock))
+                .forEach(block ->{
+                        final Item.Properties properties =  new Item.Properties().group(ModItemGroups.Mod_Materials_TAB);
+                        final BlockItem blockItem = new BlockItem(block,properties);
+                        blockItem.setRegistryName(block.getRegistryName());
+                        registry.register(blockItem);
+                });
+        LOGGER.debug("Registered BlockItems!");
     }
 
    /*

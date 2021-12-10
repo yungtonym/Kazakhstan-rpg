@@ -1,7 +1,7 @@
 {
-    "parent": "item/generated",
-    "textures": 
-     {
-      "layer0": "kazakhstanrpg:item/cumis"
-     }
+  "parent": "item/generated",
+  "textures":
+  {
+    "layer0": "kazakhstanrpg:item/cumis"
+  }
 }

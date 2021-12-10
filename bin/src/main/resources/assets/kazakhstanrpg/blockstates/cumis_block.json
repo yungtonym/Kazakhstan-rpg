@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "kazakhstanrpg:block/cumis_block"
-    }
+    "": {"model": "kazakhstanrpg:block/cumis_block"}
   }
 }

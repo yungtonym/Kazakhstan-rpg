@@ -1,6 +1,6 @@
 package com.ip_thirteen.kazakhstanrpg.utils;
 
-import com.ip_thirteen.kazakhstanrpg.init.ModItems;
+import com.ip_thirteen.kazakhstanrpg.init.ItemInit;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -16,5 +16,5 @@ public class ModItemGroups {
             }
         };
     }
-    public static ItemGroup Mod_Materials_TAB = createGroup("Mod_Materials_TAB", ModItems.CUMIS);
+    public static ItemGroup Mod_Materials_TAB = createGroup("Mod_Materials_TAB", ItemInit.CUMIS);
 }
