@@ -5,10 +5,14 @@ import com.ip_thirteen.kazakhstanrpg.init.FluidInit;
 import com.ip_thirteen.kazakhstanrpg.init.ItemInit;
 import com.ip_thirteen.kazakhstanrpg.utils.ModItemGroups;
 import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -69,7 +73,13 @@ public class KazakhstanRpg
                 });
         LOGGER.debug("Registered BlockItems!");
     }
+    @SubscribeEvent
+    public  void AddDropItem(LivingDropsEvent event)
+    {
+        if(!(event.getEntityLiving() instanceof Entity)) return;
+        World world = event.e
 
+    }
    /*
     You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
