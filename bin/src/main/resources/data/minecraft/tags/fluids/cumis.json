@@ -1,0 +1,7 @@
+{
+  "replace" : false,
+  "values": [
+    "kazakhstan:cumis_fluid",
+    "kazakhstan:cumis_flowing"
+  ]
+}
