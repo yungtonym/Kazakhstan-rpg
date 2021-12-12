@@ -2,7 +2,6 @@ package com.ip_thirteen.kazakhstanrpg.init;
 
 import com.ip_thirteen.kazakhstanrpg.KazakhstanRpg;
 
-import com.ip_thirteen.kazakhstanrpg.items.MaterialItem;
 import com.ip_thirteen.kazakhstanrpg.utils.ModItemGroups;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BucketItem;

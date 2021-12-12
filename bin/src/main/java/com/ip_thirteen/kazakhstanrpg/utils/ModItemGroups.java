@@ -12,9 +12,11 @@ public class ModItemGroups {
         return new ItemGroup(id) {
             @Override
             public ItemStack createIcon() {
+
                 return new ItemStack(icon.get());
             }
         };
+
     }
     public static ItemGroup Mod_Materials_TAB = createGroup("Mod_Materials_TAB", ItemInit.CUMIS);
 }

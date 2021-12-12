@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,5 +23,10 @@ public class BlockInit {
                     .hardnessAndResistance(2.0f, 10.0f)
                     .harvestLevel(3)
                     .harvestTool(ToolType.PICKAXE)));
+
+    public static void register(IEventBus eventBus)
+    {
+        BLOCKS.register(eventBus);
+    }
 
 }

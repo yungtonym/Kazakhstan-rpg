@@ -10,6 +10,7 @@ import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.fml.RegistryObject;
@@ -50,4 +51,10 @@ public class FluidInit {
             .register("cumis_fluid_block",()-> new FlowingFluidBlock(()-> FluidInit.CUMIS_FLUID.get(),
                     AbstractBlock.Properties.create(Material.WATER)
                             .doesNotBlockMovement().hardnessAndResistance(100.0f).noDrops()));
+
+    public static void register(IEventBus eventBus)
+    {
+        FLUIDS.register(eventBus);
+    }
+
 }

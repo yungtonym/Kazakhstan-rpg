@@ -1,18 +1,16 @@
 package com.ip_thirteen.kazakhstanrpg;
 
+import com.ip_thirteen.kazakhstanrpg.event.BucketEvent;
 import com.ip_thirteen.kazakhstanrpg.init.BlockInit;
 import com.ip_thirteen.kazakhstanrpg.init.FluidInit;
 import com.ip_thirteen.kazakhstanrpg.init.ItemInit;
 import com.ip_thirteen.kazakhstanrpg.utils.ModItemGroups;
 import net.minecraft.block.FlowingFluidBlock;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -39,24 +37,14 @@ public class KazakhstanRpg
         BlockInit.BLOCKS.register(eventBus);
         FluidInit.FLUIDS.register(eventBus);
 
+
         eventBus.addListener(this::setup);
 
         eventBus.addListener(this::doClientStuff);
 
 
         MinecraftForge.EVENT_BUS.register(this);
-
-    }
-
-    private void setup(final FMLCommonSetupEvent event)
-    {
-
-    }
-
-    private void doClientStuff(final FMLClientSetupEvent event)
-    {
-
-
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BucketEvent::WaterBucketEvent);
     }
     @SubscribeEvent
     public static void RegisterItem(final RegistryEvent.Register<Item> even)
@@ -64,6 +52,7 @@ public class KazakhstanRpg
         final IForgeRegistry<Item> registry = even.getRegistry();
 
         BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)
+
                 .filter(block -> !(block instanceof FlowingFluidBlock))
                 .forEach(block ->{
                         final Item.Properties properties =  new Item.Properties().group(ModItemGroups.Mod_Materials_TAB);
@@ -73,11 +62,14 @@ public class KazakhstanRpg
                 });
         LOGGER.debug("Registered BlockItems!");
     }
-    @SubscribeEvent
-    public  void AddDropItem(LivingDropsEvent event)
+    private void setup(final FMLCommonSetupEvent event)
     {
-        if(!(event.getEntityLiving() instanceof Entity)) return;
-        World world = event.e
+
+    }
+
+    private void doClientStuff(final FMLClientSetupEvent event)
+    {
+
 
     }
    /*
