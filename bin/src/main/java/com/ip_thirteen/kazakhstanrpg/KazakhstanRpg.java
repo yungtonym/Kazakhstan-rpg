@@ -52,7 +52,6 @@ public class KazakhstanRpg
         final IForgeRegistry<Item> registry = even.getRegistry();
 
         BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)
-
                 .filter(block -> !(block instanceof FlowingFluidBlock))
                 .forEach(block ->{
                         final Item.Properties properties =  new Item.Properties().group(ModItemGroups.Mod_Materials_TAB);
@@ -62,6 +61,7 @@ public class KazakhstanRpg
                 });
         LOGGER.debug("Registered BlockItems!");
     }
+
     private void setup(final FMLCommonSetupEvent event)
     {
 

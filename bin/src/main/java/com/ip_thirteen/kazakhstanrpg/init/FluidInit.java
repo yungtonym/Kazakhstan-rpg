@@ -52,6 +52,7 @@ public class FluidInit {
                     AbstractBlock.Properties.create(Material.WATER)
                             .doesNotBlockMovement().hardnessAndResistance(100.0f).noDrops()));
 
+
     public static void register(IEventBus eventBus)
     {
         FLUIDS.register(eventBus);
