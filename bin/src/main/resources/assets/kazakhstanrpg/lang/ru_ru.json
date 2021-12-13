@@ -2,7 +2,15 @@
   "item.kazakhstanrpg.cumis": "Кумыс",
   "item.kazakhstanrpg.cumis_bucket": "Ведро Кумыса",
   "item.kazakhstanrpg.cumis_bottle" : "Бутылка Кумыса",
+  "item.kazakhstanrpg.saber": "Saber",
+  "item.kazakhstanrpg.ruby": "Рубин",
+  "item.kazakhstanrpg.ruby_sword": "Рубиновый меч",
+  "item.kazakhstanrpg.ruby_pickaxe": "Рубиновая кирка",
+  "item.kazakhstanrpg.ruby_shovel": "Рубиновая лопата",
+  "item.kazakhstanrpg.ruby_axe": "Рубиный топор",
+  "item.kazakhstanrpg.ruby_hoe": "Рубиновая мотыга",
   "fluid.kazakhstanrpg.cumis_fluid" : "Кумыс",
   "block.kazakhstanrpg.cumis_block": "Блок Кумыса",
+  "block.kazakhstanrpg.ruby_ore": "Рубиновая руда",
   "itemGroup.Mod_Materials_TAB": "Казахстан РПГ"
 }

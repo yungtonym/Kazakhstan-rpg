@@ -18,12 +18,13 @@ public  class BucketEvent {
     {
 
         ItemStack item1 = new ItemStack(ItemInit.CUMIS_BUCKET.get());
-        ItemStack item2 = new ItemStack(ItemInit.CUMIS_BOTTLE.get());
+
         if(event.getPlayer().getHeldItemMainhand().getItem() == Items.BUCKET)      //Если игрок кликает правой кнопкой мыши и у него в руке ведро
         {
             if(event.getTarget() instanceof HorseEntity );// если ведром нажимаем кликаем на лошадь
             {
-                event.getPlayer().setHeldItem(Hand.MAIN_HAND, item1);
+                event.getPlayer().setHeldItem(Hand.MAIN_HAND,ItemStack.EMPTY);
+                event.getPlayer().inventory.addItemStackToInventory(item1);
             }
         }
     }

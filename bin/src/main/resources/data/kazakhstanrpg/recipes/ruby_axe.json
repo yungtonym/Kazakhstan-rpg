@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ii " ,
+    "il " ,
+    " l "
+  ],
+  "key":{
+    "l":{
+      "item": "minecraft:stick"
+    },
+    "i":{
+      "item": "kazakhstanrpg:ruby"
+    }
+  },
+  "result" :{
+    "item":"kazakhstanrpg:ruby_axe"
+  }
+}

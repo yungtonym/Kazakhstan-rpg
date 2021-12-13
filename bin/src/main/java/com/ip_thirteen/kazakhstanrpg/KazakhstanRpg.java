@@ -1,6 +1,8 @@
 package com.ip_thirteen.kazakhstanrpg;
 
+import com.ip_thirteen.kazakhstanrpg.event.BottleEvent;
 import com.ip_thirteen.kazakhstanrpg.event.BucketEvent;
+import com.ip_thirteen.kazakhstanrpg.event.CraftEvent;
 import com.ip_thirteen.kazakhstanrpg.init.BlockInit;
 import com.ip_thirteen.kazakhstanrpg.init.FluidInit;
 import com.ip_thirteen.kazakhstanrpg.init.ItemInit;
@@ -45,6 +47,8 @@ public class KazakhstanRpg
 
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BucketEvent::WaterBucketEvent);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, CraftEvent::ReturnBucket);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BottleEvent::WaterbottelTanks);
     }
     @SubscribeEvent
     public static void RegisterItem(final RegistryEvent.Register<Item> even)
@@ -52,7 +56,7 @@ public class KazakhstanRpg
         final IForgeRegistry<Item> registry = even.getRegistry();
 
         BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)
-                .filter(block -> !(block instanceof FlowingFluidBlock))
+                .filter(block -> !(block instanceof FlowingFluidBlock) )
                 .forEach(block ->{
                         final Item.Properties properties =  new Item.Properties().group(ModItemGroups.Mod_Materials_TAB);
                         final BlockItem blockItem = new BlockItem(block,properties);

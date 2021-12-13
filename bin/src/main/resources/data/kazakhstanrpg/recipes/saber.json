@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [      
+         " ii" ,
+         "IiI" ,
+         " l "
+    ],
+    "key":{
+        "l":{
+            "item": "minecraft:stick"
+        },
+        "i":{
+            "item": "minecraft:iron_ingot"
+        },
+        "I" :{
+            "item" :"minecraft:iron_block"
+        }
+    },
+    "result" :{
+        "item":"kazakhstanrpg:saber"
+    }
+}

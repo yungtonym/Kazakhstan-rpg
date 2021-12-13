@@ -1,8 +1,17 @@
 {
+
   "item.kazakhstanrpg.cumis": "Cumis",
   "item.kazakhstanrpg.cumis_bucket": "Cumis bucket",
   "item.kazakhstanrpg.cumis_bottle" : "Cumis bottle",
+  "item.kazakhstanrpg.ruby": "Ruby",
+  "item.kazakhstanrpg.ruby_ore": "Ruby Ore",
+  "item.kazakhstanrpg.ruby_sword": "Ruby Sword",
+  "item.kazakhstanrpg.ruby_pickaxe": "Ruby Pickaxe",
+  "item.kazakhstanrpg.ruby_shovel": "Ruby Shovel",
+  "item.kazakhstanrpg.ruby_axe": "Ruby Axe",
+  "item.kazakhstanrpg.ruby_hoe": "Ruby Hoe",
   "fluid.kazakhstanrpg.cumis_fluid" : "Cumis",
   "block.kazakhstanrpg.cumis_block": "Cumis block",
+  "block.kazakhstanrpg.ruby_ore": "Ruby Ore",
   "itemGroup.Mod_Materials_TAB": "Kazakhstan RPG"
 }
