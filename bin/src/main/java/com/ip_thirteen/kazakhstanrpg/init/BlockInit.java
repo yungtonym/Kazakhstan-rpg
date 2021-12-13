@@ -31,8 +31,8 @@ public class BlockInit {
                     .harvestTool(ToolType.PICKAXE)));
 
     public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
-            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(5f,2)
-                    .harvestLevel(2).harvestTool(ToolType.PICKAXE)));
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).func_235861_h_().hardnessAndResistance(5f)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

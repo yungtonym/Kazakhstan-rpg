@@ -2,8 +2,10 @@ package com.ip_thirteen.kazakhstanrpg.init;
 
 import com.ip_thirteen.kazakhstanrpg.KazakhstanRpg;
 
+import com.ip_thirteen.kazakhstanrpg.items.ModArmorMaterial;
 import com.ip_thirteen.kazakhstanrpg.items.ModItemTier;
 import com.ip_thirteen.kazakhstanrpg.utils.ModItemGroups;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -29,7 +31,13 @@ public class ItemInit {
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
 
-
+    public static final RegistryObject <SwordItem> SABER = ITEMS.register("saber",
+            ()-> new SwordItem(ItemTier.IRON,8,0.6f,
+                    new Item.Properties().group(ModItemGroups.Mod_Materials_TAB).maxStackSize(1)));
+    //block
+    public static final RegistryObject <Item> CUMIS_BLOCK = ITEMS.register("cumis_block",
+            () -> new BlockItem(BlockInit.CUMIS_BLOCK.get(), new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
+    // Ruby Tools
     public static final RegistryObject<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
             () -> new SwordItem(ModItemTier.RUBY, 4, -2.4f,
                     new Item.Properties().group(ModItemGroups.Mod_Materials_TAB).maxStackSize(1)));
@@ -50,13 +58,22 @@ public class ItemInit {
             () -> new HoeItem(ModItemTier.RUBY, -2, 0f,
                     new Item.Properties().group(ModItemGroups.Mod_Materials_TAB).maxStackSize(1)));
 
-    public static final RegistryObject <SwordItem> SABER = ITEMS.register("saber",
-            ()-> new SwordItem(ItemTier.IRON,8,0.6f,
-                    new Item.Properties().group(ModItemGroups.Mod_Materials_TAB).maxStackSize(1)));
-    //block
-    public static final RegistryObject <Item> CUMIS_BLOCK = ITEMS.register("cumis_block",
-            () -> new BlockItem(BlockInit.CUMIS_BLOCK.get(), new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
+    //Armor ruby
+    public static final RegistryObject<Item> RUBY_BOOTS = ITEMS.register("ruby_boots",
+            () -> new ArmorItem(ModArmorMaterial.RUBY, EquipmentSlotType.FEET,
+                    new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
 
+    public static final RegistryObject<Item> RUBY_CHESTPLATE = ITEMS.register("ruby_chestplate",
+            () -> new ArmorItem(ModArmorMaterial.RUBY, EquipmentSlotType.CHEST,
+                    new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
+
+    public static final RegistryObject<Item> RUBY_LEGGINGS = ITEMS.register("ruby_leggings",
+            () -> new ArmorItem(ModArmorMaterial.RUBY, EquipmentSlotType.LEGS,
+                    new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
+
+    public static final RegistryObject<Item> RUBY_HELMET = ITEMS.register("ruby_helmet",
+            () -> new ArmorItem(ModArmorMaterial.RUBY, EquipmentSlotType.HEAD,
+                    new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
 
     public static void register(IEventBus eventBus)
     {
