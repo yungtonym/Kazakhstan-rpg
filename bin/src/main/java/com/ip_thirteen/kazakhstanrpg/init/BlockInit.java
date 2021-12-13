@@ -45,7 +45,6 @@ public class BlockInit {
                 new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
     }
 
-
     public static void register(IEventBus eventBus)
     {
         BLOCKS.register(eventBus);

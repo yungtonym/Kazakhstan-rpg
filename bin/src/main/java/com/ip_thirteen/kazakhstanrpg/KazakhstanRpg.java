@@ -7,6 +7,7 @@ import com.ip_thirteen.kazakhstanrpg.init.BlockInit;
 import com.ip_thirteen.kazakhstanrpg.init.FluidInit;
 import com.ip_thirteen.kazakhstanrpg.init.ItemInit;
 import com.ip_thirteen.kazakhstanrpg.utils.ModItemGroups;
+import com.ip_thirteen.kazakhstanrpg.world.gen.OreGeneration;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -68,7 +69,7 @@ public class KazakhstanRpg
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+        OreGeneration.addOresToBiomes();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
