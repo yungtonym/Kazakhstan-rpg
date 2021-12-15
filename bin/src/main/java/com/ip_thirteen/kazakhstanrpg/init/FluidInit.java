@@ -2,10 +2,8 @@ package com.ip_thirteen.kazakhstanrpg.init;
 
 import com.ip_thirteen.kazakhstanrpg.KazakhstanRpg;
 import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.util.ResourceLocation;

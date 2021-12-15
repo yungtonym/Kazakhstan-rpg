@@ -21,13 +21,10 @@ public class OreGeneration {
 
     public static void addOresToBiomes(){
         for (Biome biome : ForgeRegistries.BIOMES){
-            if (biome.getCategory() == Biome.Category.DESERT){
+            if (biome.getCategory() == Biome.Category.DESERT)
+            {
                 generate(biome, OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.RUBY_ORE.get(),
                         20, 6, 40, 8);
-            }
-
-            if (biome.getCategory() == Biome.Category.FOREST){
-                generate(biome, ENDSTONE_FILLER, Blocks.DIAMOND_BLOCK, 10, 6, 40, 8);
             }
         }
     }

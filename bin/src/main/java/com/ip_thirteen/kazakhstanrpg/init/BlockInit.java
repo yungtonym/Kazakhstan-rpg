@@ -3,10 +3,7 @@ package com.ip_thirteen.kazakhstanrpg.init;
 
 import com.ip_thirteen.kazakhstanrpg.KazakhstanRpg;
 import com.ip_thirteen.kazakhstanrpg.utils.ModItemGroups;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.OreBlock;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -25,10 +22,7 @@ public class BlockInit {
 
 
     public static final RegistryObject<Block> CUMIS_BLOCK = BLOCKS.register("cumis_block",
-            () -> new Block(AbstractBlock.Properties.create(Material.IRON).sound(SoundType.METAL)
-                    .hardnessAndResistance(2.0f, 10.0f)
-                    .harvestLevel(3)
-                    .harvestTool(ToolType.PICKAXE)));
+            () -> new Block(AbstractBlock.Properties.create(Material.IRON).notSolid()));
 
     public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
@@ -44,7 +38,6 @@ public class BlockInit {
         ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().group(ModItemGroups.Mod_Materials_TAB)));
     }
-
     public static void register(IEventBus eventBus)
     {
         BLOCKS.register(eventBus);

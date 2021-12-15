@@ -17,7 +17,7 @@ public  class BucketEvent {
     public static void WaterBucketEvent(PlayerInteractEvent.EntityInteractSpecific event)
     {
 
-        ItemStack item1 = new ItemStack(ItemInit.CUMIS_BUCKET.get());
+        ItemStack item1 = new ItemStack(ItemInit.CUMIS_BUCKET.get(),1);
 
         if(event.getPlayer().getHeldItemMainhand().getItem() == Items.BUCKET)      //Если игрок кликает правой кнопкой мыши и у него в руке ведро
         {

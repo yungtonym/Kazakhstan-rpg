@@ -1,6 +1,5 @@
 package com.ip_thirteen.kazakhstanrpg;
 
-import com.ip_thirteen.kazakhstanrpg.event.BottleEvent;
 import com.ip_thirteen.kazakhstanrpg.event.BucketEvent;
 import com.ip_thirteen.kazakhstanrpg.event.CraftEvent;
 import com.ip_thirteen.kazakhstanrpg.init.BlockInit;
@@ -41,6 +40,7 @@ public class KazakhstanRpg
         FluidInit.FLUIDS.register(eventBus);
 
 
+
         eventBus.addListener(this::setup);
 
         eventBus.addListener(this::doClientStuff);
@@ -49,7 +49,6 @@ public class KazakhstanRpg
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BucketEvent::WaterBucketEvent);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, CraftEvent::ReturnBucket);
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BottleEvent::WaterbottelTanks);
     }
     @SubscribeEvent
     public static void RegisterItem(final RegistryEvent.Register<Item> even)
@@ -69,6 +68,7 @@ public class KazakhstanRpg
 
     private void setup(final FMLCommonSetupEvent event)
     {
+
         OreGeneration.addOresToBiomes();
     }
 
